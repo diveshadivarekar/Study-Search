@@ -27,10 +27,10 @@ window.addEventListener("load", function () {
   loader.style.display = "none";
   content.style.display = "block";
 });
-darkmode = "light";
-
-if (localStorage.getItem("darkmode") === "dark") {
+// Check localStorage for dark mode setting
+if (localStorage.getItem("darkmode") === "dark" || !localStorage.getItem("darkmode")) {
   // Apply the dark theme
+  localStorage.setItem("darkmode", "dark"); // Set default to dark
   document.body.classList.add("dark-mode");
 }
 
